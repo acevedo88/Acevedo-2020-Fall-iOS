@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17511" systemVersion="19H2" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Location" representedClassName="Location" syncable="YES" codeGenerationType="class">
+        <attribute name="latitude" optional="YES" attributeType="String"/>
+        <attribute name="longitude" optional="YES" attributeType="String"/>
+        <relationship name="map" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Map" inverseName="location" inverseEntity="Map"/>
+        <relationship name="waypoint" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Waypoint" inverseName="location" inverseEntity="Waypoint"/>
+    </entity>
+    <entity name="Map" representedClassName="Map" syncable="YES" codeGenerationType="class">
+        <attribute name="mapName" optional="YES" attributeType="String"/>
+        <attribute name="mapType" optional="YES" attributeType="String"/>
+        <relationship name="location" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Location" inverseName="map" inverseEntity="Location"/>
+        <relationship name="waypoint" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Waypoint" inverseName="map" inverseEntity="Waypoint"/>
+    </entity>
+    <entity name="Waypoint" representedClassName="Waypoint" syncable="YES" codeGenerationType="class">
+        <attribute name="waypointName" optional="YES" attributeType="String"/>
+        <relationship name="location" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Location" inverseName="waypoint" inverseEntity="Location"/>
+        <relationship name="map" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Map" inverseName="waypoint" inverseEntity="Map"/>
+    </entity>
+    <elements>
+        <element name="Location" positionX="-4373.2890625" positionY="-97.76171875" width="128" height="103"/>
+        <element name="Map" positionX="-4480.3359375" positionY="-255.53515625" width="128" height="103"/>
+        <element name="Waypoint" positionX="-4559.36328125" positionY="-83.5" width="128" height="88"/>
+    </elements>
+</model>
